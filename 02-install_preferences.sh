@@ -69,7 +69,7 @@ fi
 # gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 
 log "Set favorite-app in Dash"
-gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'spotify_spotify.desktop', 'code.desktop', 'org.gnome.Software.desktop', 'gnome-control-center.desktop', 'slack_slack.desktop', 'gnome-calculator_gnome-calculator.desktop', 'org.gnome.gedit.desktop', 'Zoom.desktop']"
+gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'spotify.desktop', 'code.desktop', 'org.gnome.Software.desktop', 'gnome-control-center.desktop', 'slack_slack.desktop', 'gnome-calculator_gnome-calculator.desktop', 'org.gnome.gedit.desktop', 'Zoom.desktop']"
 
 log "Apply clock configs"
 gsettings set org.gnome.desktop.interface clock-show-date true
@@ -79,8 +79,9 @@ log "Apply Nautilus bookmarks"
 if [ ! -d "${HOME}/.config/gtk-3.0" ];then
 	mkdir -p "${HOME}/.config/gtk-3.0"
 fi
+
 cp utils/gnome-settings/bookmarks "${HOME}/.config/gtk-3.0"
-sed -i "s/@user@/$(whoami)/g" "${HOME}/.config/gtk-3.0"
+sed -i "s/@user@/$(whoami)/g" "${HOME}/.config/gtk-3.0/bookmarks"
 
 # log "Set Wallpaper"
 # wallpaper_file="wallpaper.jpg"

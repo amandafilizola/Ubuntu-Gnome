@@ -11,6 +11,7 @@ function init(){
     # icons folder
     icons_path="$HOME/.local/share/icons/"
     test -d "$icons_path" || mkdir -p "$icons_path"
+    current_folder=$(pwd)
 }
 
 # ============================================
@@ -44,6 +45,7 @@ function install_korla_icons(){
     gsettings set org.gnome.desktop.interface icon-theme "korla"
 
     # apply korla icon folders in some folders
+    cd "$current_folder"
     bash utils/korla_folders_apply.sh
 }
 
