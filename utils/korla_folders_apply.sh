@@ -60,11 +60,21 @@ function set_home_hidden_folders(){
 # Function that change folder icon in all Github repositories
 # ============================================
 function set_icon_all_github_folders(){
-  local root_folder="${HOME}/Dropbox/development"
+  local root_folder="${HOME}/projects"
 
   for git_folder in $(find "$root_folder" -iname ".git"); do
     if grep -q "github" "$git_folder/config";then
       set_icon_folder "$(dirname $git_folder)" "${icons_folder}/folder-github.svg"
+    fi
+  done
+}
+
+function set_icon_all_gitlab_folders(){
+  local root_folder="${HOME}/projects"
+
+  for git_folder in $(find "$root_folder" -iname ".git"); do
+    if grep -q "gitlab" "$git_folder/config";then
+      set_icon_folder "$(dirname $git_folder)" "${icons_folder}/folder-gitlab.svg"
     fi
   done
 }
@@ -75,25 +85,31 @@ function set_icon_all_github_folders(){
 function set_icon_all_folders(){
   # my bin folder
   set_icon_folder "$HOME/bin" "${icons_folder}/folder-green.svg"
-  # dropbox folder
-  set_icon_folder "$HOME/Dropbox" "${icons_folder}/folder-dropbox.svg"
-  # dropbox image folders
-  set_icon_folder "$HOME/Dropbox/Images" "${icons_folder}/folder-image.svg"
-  set_icon_folder "$HOME/Dropbox/Images/Fotos" "${icons_folder}/folder-pictures.svg"
-  # my folder of Linux ISOs
-  set_icon_folder "$HOME/Dropbox/linux_distribuições" "${icons_folder}/distributor-logo.svg"
-  # development folders
-  set_icon_folder "$HOME/Dropbox/development" "${icons_folder}/folder-development.svg"
-  set_icon_folder "$HOME/Dropbox/development/workspace" "${icons_folder}/folder-development.svg"
-  set_icon_folder "$HOME/Dropbox/development/workspace/github" "${icons_folder}/folder-github.svg"
-  # Music folders
-  set_icon_folder "$HOME/Dropbox/Music" "${icons_folder}/folder-music.svg"
-  set_icon_folder "$HOME/Dropbox/Music/musicas" "${icons_folder}/folder-music.svg"
-  # other dropbox folders
-  set_icon_folder "$HOME/Dropbox/meus_documentos" "${icons_folder}/folder-documents.svg"
-  set_icon_folder "$HOME/Dropbox/finanças" "${icons_folder}/folder-green.svg"
+
+  #my projects folder
+  set_icon_folder "$HOME/projects" "${icons_folder}/folder-red.svg"
+
+
+  # # dropbox folder
+  # set_icon_folder "$HOME/Dropbox" "${icons_folder}/folder-dropbox.svg"
+  # # dropbox image folders
+  # set_icon_folder "$HOME/Dropbox/Images" "${icons_folder}/folder-image.svg"
+  # set_icon_folder "$HOME/Dropbox/Images/Fotos" "${icons_folder}/folder-pictures.svg"
+  # # my folder of Linux ISOs
+  # set_icon_folder "$HOME/Dropbox/linux_distribuições" "${icons_folder}/distributor-logo.svg"
+  # # development folders
+  # set_icon_folder "$HOME/Dropbox/development" "${icons_folder}/folder-development.svg"
+  # set_icon_folder "$HOME/Dropbox/development/workspace" "${icons_folder}/folder-development.svg"
+  # set_icon_folder "$HOME/Dropbox/development/workspace/github" "${icons_folder}/folder-github.svg"
+  # # Music folders
+  # set_icon_folder "$HOME/Music" "${icons_folder}/folder-music.svg"
+  # set_icon_folder "$HOME/Dropbox/Music/musicas" "${icons_folder}/folder-music.svg"
+  # # other dropbox folders
+  # set_icon_folder "$HOME/Dropbox/meus_documentos" "${icons_folder}/folder-documents.svg"
+  # set_icon_folder "$HOME/Dropbox/finanças" "${icons_folder}/folder-green.svg"
 
   set_icon_all_github_folders
+  set_icon_all_gitlab_folders
   set_home_hidden_folders
 }
 

@@ -19,12 +19,12 @@ function log(){
 
 # desinstalando o gnome-software (a loja de aplicativo do Ubuntu).
 # é..eu não uso ele pra nada mesmo, resolvi desinstalar por padrão
-if type gnome-software > /dev/null 2>&1; then
-  log "uninstallings the gnome-software..."
-  sudo apt remove gnome-software -y
-  # remove inclusive o arquivo de 'startup application' que faz ele iniciar no boot.
-  test -f /etc/xdg/autostart/gnome-software-service.desktop && sudo rm -rf $_
-fi
+# if type gnome-software > /dev/null 2>&1; then
+#   log "uninstallings the gnome-software..."
+#   sudo apt remove gnome-software -y
+#   # remove inclusive o arquivo de 'startup application' que faz ele iniciar no boot.
+#   test -f /etc/xdg/autostart/gnome-software-service.desktop && sudo rm -rf $_
+# fi
 
 # exibindo todos os pacotes que são carregados no boot.
 # (através dessa linha, dá pra gerenciar melhor usando o 'Startup Applications')
@@ -40,8 +40,8 @@ test -f /etc/xdg/autostart/gnome-welcome-tour.desktop && (
   echo -e '[Desktop Entry]\nHidden=true' > ~/.config/autostart/gnome-welcome-tour.desktop
 )
 
-log "applying power and keyboard config preferences"
-dconf load /org/gnome/settings-daemon/plugins/ < utils/gnome-settings/keyboard-shortcuts-gnome.dconf
+# log "applying power and keyboard config preferences"
+# dconf load /org/gnome/settings-daemon/plugins/ < utils/gnome-settings/keyboard-shortcuts-gnome.dconf
 
 ubuntu_version=$(cat /etc/lsb-release | grep "DISTRIB_RELEASE" | cut -d "=" -f2)
 if [ "$ubuntu_version" != "19.04" ];then
@@ -65,11 +65,11 @@ else
   gsettings set org.gnome.shell.extensions.desktop-icons show-trash false
 fi
 
-log "Change control buttons to the left position"
-gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
+# log "Change control buttons to the left position"
+# gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 
 log "Set favorite-app in Dash"
-gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'terminator.desktop', 'spotify.desktop']"
+gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'spotify_spotify.desktop', 'code.desktop', 'org.gnome.Software.desktop', 'gnome-control-center.desktop', 'slack_slack.desktop', 'gnome-calculator_gnome-calculator.desktop', 'org.gnome.gedit.desktop', 'Zoom.desktop']"
 
 log "Apply clock configs"
 gsettings set org.gnome.desktop.interface clock-show-date true
@@ -82,13 +82,13 @@ fi
 cp utils/gnome-settings/bookmarks "${HOME}/.config/gtk-3.0"
 sed -i "s/@user@/$(whoami)/g" "${HOME}/.config/gtk-3.0"
 
-log "Set Wallpaper"
-wallpaper_file="wallpaper.jpg"
-cp "wallpaper/${wallpaper_file}" "$HOME/Pictures"
-gsettings set org.gnome.desktop.background picture-uri file:///home/${USER}/Pictures/${wallpaper_file}
+# log "Set Wallpaper"
+# wallpaper_file="wallpaper.jpg"
+# cp "wallpaper/${wallpaper_file}" "$HOME/Pictures"
+# gsettings set org.gnome.desktop.background picture-uri file:///home/${USER}/Pictures/${wallpaper_file}
 
-log "Build lock screen wallpaper"
-convert /home/${USER}/Pictures/${wallpaper_file} -blur 0x8 /home/${USER}/Pictures/wallpaper_lockscreen.jpg
-gsettings set org.gnome.desktop.screensaver picture-uri file:///home/${USER}/Pictures/wallpaper_lockscreen.jpg
+# log "Build lock screen wallpaper"
+# convert /home/${USER}/Pictures/${wallpaper_file} -blur 0x8 /home/${USER}/Pictures/wallpaper_lockscreen.jpg
+# gsettings set org.gnome.desktop.screensaver picture-uri file:///home/${USER}/Pictures/wallpaper_lockscreen.jpg
 
 gnome-shell --replace &>/dev/null & disown

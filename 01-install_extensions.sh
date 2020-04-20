@@ -74,12 +74,12 @@ gsettings set org.gnome.shell enabled-extensions "[]"
 
 # OBS: A extensão Activities-Configurator tava dando problema, depois eu vejo
 extensions=(
-  ${gnome_site}/extension-data/blyryozoon.dev.gmail.com.v7.shell-extension.zip
+  # ${gnome_site}/extension-data/blyryozoon.dev.gmail.com.v7.shell-extension.zip
   ${gnome_site}/extension-data/apt-update-indicator%40franglais125.gmail.com.v20.shell-extension.zip
   # ${gnome_site}/extension-data/activities-confignls1729.v83.shell-extension.zip
   ${gnome_site}/extension-data/glassygnomeemiapwil.v17.shell-extension.zip
   ${gnome_site}/extension-data/openweather-extension%40jenslody.de.v97.shell-extension.zip
-  ${gnome_site}/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip
+  # ${gnome_site}/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip
 )
 
 #  instala todas as extensões
@@ -98,13 +98,13 @@ gsettings set org.gnome.shell.extensions.openweather wind-speed-unit "kph"
 log "config Apt-Update-Indicator Extension"
 gsettings set org.gnome.shell.extensions.apt-update-indicator update-cmd-options update-manager
 
-log "Set Dash position do BOTTOM"
-gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+# log "Set Dash position do BOTTOM"
+# gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 
-log "Change Dash icon size to 20"
-gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 20
+# log "Change Dash icon size to 20"
+# gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 20
 
-log "Change 'show apps' button to the left"
-gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
+# log "Change 'show apps' button to the left"
+# gsettings set org.gnome.shell.extensions.dash-to-dock show-apps-at-top true
 
 gnome-shell --replace &>/dev/null & disown
