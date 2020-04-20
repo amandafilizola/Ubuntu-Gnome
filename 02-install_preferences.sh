@@ -69,7 +69,7 @@ fi
 # gsettings set org.gnome.desktop.wm.preferences button-layout 'close,minimize,maximize:'
 
 log "Set favorite-app in Dash"
-gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'spotify.desktop', 'code.desktop', 'org.gnome.Software.desktop', 'gnome-control-center.desktop', 'slack.desktop', 'gnome-calculator_gnome-calculator.desktop', 'org.gnome.gedit.desktop', 'Zoom.desktop']"
+gsettings set org.gnome.shell favorite-apps "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'spotify.desktop','spotify_spotify.desktop', 'code.desktop', 'org.gnome.Software.desktop', 'gnome-control-center.desktop', 'slack.desktop', 'slack_slack.desktop', 'gnome-calculator_gnome-calculator.desktop', 'org.gnome.gedit.desktop', 'Zoom.desktop']"
 
 log "Apply clock configs"
 gsettings set org.gnome.desktop.interface clock-show-date true
