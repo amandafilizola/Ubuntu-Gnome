@@ -47,6 +47,8 @@ function install_korla_icons(){
     # apply korla icon folders in some folders
     cd "$current_folder"
     bash utils/korla_folders_apply.sh
+    #for some reason, after apply, window buttons are going left
+    gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,close'
 }
 
 # ============================================
