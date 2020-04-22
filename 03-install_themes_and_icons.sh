@@ -64,18 +64,18 @@ function install_korla_icons(){
 # ============================================
 # Install Arc-Dark GTK theme
 # ============================================
-# function install_arc_dark_theme(){
-#     # install dependencies
-#     sudo apt install -y autoconf automake pkg-config libgtk-3-dev gnome-themes-standard gtk2-engines-murrine
-#     cd ~/bin && git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
-#     ./autogen.sh --prefix=/usr
-#     sudo make install
+function install_arc_darker_theme(){
+    # install dependencies
+    sudo apt install -y autoconf automake pkg-config libgtk-3-dev gnome-themes-standard gtk2-engines-murrine
+    cd ~/bin && git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
+    ./autogen.sh --prefix=/usr
+    sudo make install
 
-#     # GTK theme
-#     gsettings set org.gnome.desktop.interface gtk-theme "Arc-Dark"
-#     # Gnome-Shell theme
-#     gsettings set org.gnome.shell.extensions.user-theme name "Arc-Dark"
-# }
+    # GTK theme
+    gsettings set org.gnome.desktop.interface gtk-theme "Arc-Darker"
+    # Gnome-Shell theme
+    gsettings set org.gnome.shell.extensions.user-theme name "Arc-Darker"
+}
 
 # ============================================
 # Install Flat-Remix-dark Gnome-Shell theme
@@ -99,8 +99,8 @@ log "Install Korla Icons..."
 install_korla_icons
 # log "Install Breeze Cursors..."
 # install_breeze_cursor
-# log "Install Arc-Dark GTK theme..."
-# install_arc_dark_theme
+log "Install Arc-Darker GTK theme..."
+install_arc_darker_theme
 # log "Install FlatRemix Gnome-Shell theme..."
 # install_FlatRemix_Gnome_Shell
 
