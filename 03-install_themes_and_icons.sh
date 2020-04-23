@@ -76,7 +76,7 @@ function install_arc_darker_theme(){
     # Gnome-Shell theme
     gsettings set org.gnome.shell.extensions.user-theme name "Arc-Darker"
 
-    log "Agora Abra o Gnome Tweak tools e adicione o tema Ark-Dark no Shell"
+    echo "Agora Abra o Gnome Tweak tools e adicione o tema Ark-Dark no Shell"
 }
 
 # ============================================

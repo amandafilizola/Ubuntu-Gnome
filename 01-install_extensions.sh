@@ -77,9 +77,10 @@ extensions=(
   # ${gnome_site}/extension-data/blyryozoon.dev.gmail.com.v7.shell-extension.zip
   ${gnome_site}/extension-data/apt-update-indicator%40franglais125.gmail.com.v20.shell-extension.zip
   # ${gnome_site}/extension-data/activities-confignls1729.v83.shell-extension.zip
-  ${gnome_site}/extension-data/glassygnomeemiapwil.v17.shell-extension.zip
+  # ${gnome_site}/extension-data/glassygnomeemiapwil.v17.shell-extension.zip
   ${gnome_site}/extension-data/openweather-extension%40jenslody.de.v97.shell-extension.zip
   ${gnome_site}/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip
+  ${gnome_site}/extension-data/gnomespotifylabelmheine.github.com.v1.shell-extension.zip
 )
 
 #  instala todas as extensões
