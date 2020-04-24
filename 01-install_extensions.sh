@@ -81,6 +81,7 @@ extensions=(
   ${gnome_site}/extension-data/openweather-extension%40jenslody.de.v97.shell-extension.zip
   ${gnome_site}/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip
   ${gnome_site}/extension-data/gnomespotifylabelmheine.github.com.v1.shell-extension.zip
+  ${gnome_site}/extension-data/netspeed%40hedayaty.gmail.com.v29.shell-extension.zip
 )
 
 #  instala todas as extensões
