@@ -83,6 +83,10 @@ extensions=(
   ${gnome_site}/extension-data/gnomespotifylabelmheine.github.com.v1.shell-extension.zip
   ${gnome_site}/extension-data/netspeed%40hedayaty.gmail.com.v29.shell-extension.zip
   ${gnome_site}/extension-data/runcatkolesnikov.se.v10.shell-extension.zip
+  ${gnome_site}/extension-data/sound-output-device-chooserkgshank.net.v32.shell-extension.zip
+  ${gnome_site}/extension-data/cpupowermko-sl.de.v23.shell-extension.zip
+  ${gnome_site}/extension-data/extensionsabteil.org.v11.shell-extension.zip
+  ${gnome_site}/extension-data/transparent-window-movingnoobsai.github.com.v6.shell-extension.zip
 )
 
 #  instala todas as extensões
