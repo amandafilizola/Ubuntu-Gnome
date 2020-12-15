@@ -21,23 +21,23 @@ function install_korla_icons(){
     local korla_temp_folder="/tmp/korla_temp"
     # Instala o pacote de ícones 'Korla'
     # ------------------------------------------------------------------
-    log "install Korla icon theme"
-    [[ -e "${icons_path}/korla" ]] && rm -rf "${icons_path}/korla"
-    [[ -e "${icons_path}/korla-light" ]] && rm -rf "${icons_path}/korla-light"
+    #log "install Korla icon theme"
+    [[ -e "${icons_path}/korla" ]] && sudo rm -rf "${icons_path}/korla"
+    [[ -e "${icons_path}/korla-light" ]] && sudo rm -rf "${icons_path}/korla-light"
 
     [[ -e "$korla_temp_folder" ]] || mkdir "$korla_temp_folder" && rm -rf "$korla_temp_folder"
-    git clone https://github.com/bikass/korla.git "$korla_temp_folder"
-    cd "$korla_temp_folder" && mv korla korla-light "$icons_path"
+    git clone git@github.com:bikass/korla.git "$korla_temp_folder"
+    cd "$korla_temp_folder" && sudo mv korla korla-light "$icons_path"
 
     # Instala o pacote de folders do 'Korla'
     # o modo de instalação está no github deles.
     log "install Korla icon folder"
-    git clone https://github.com/bikass/korla-folders.git
+    git clone git@github.com:bikass/korla-folders.git
     cd korla-folders
     unzip -x places_1.zip
     mv "places_1" "scalable"
     rm -rf "${icons_path}/korla/places/scalable"
-    mv "scalable" "${icons_path}/korla/places"
+    sudo mv "scalable" "${icons_path}/korla/places"
 
     rm -rf "$korla_temp_folder"
 
